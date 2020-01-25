@@ -71,6 +71,7 @@ function newQueue(eventName, hostName, location,start,end,id){
     // });
 }
 
+///TODO: IMPLEMENT NUM COUNT FOR QUEUE COUNT
 function createUser(){
   var name = document.getElementById("name").value;
   var code = document.getElementById("code").value;
@@ -80,11 +81,7 @@ function createUser(){
 function addUser(name, code) {
   var theRef = firebase.database().ref('queues/' + code + '/people');
   var newUserRef = theRef.push();
-<<<<<<< HEAD
-  newPostRef.set({
-=======
   newUserRef.set({
->>>>>>> 3743e6b4389b0d66f2fa95807f861476ab270f32
       "name": name,
       "code": code,
   });
