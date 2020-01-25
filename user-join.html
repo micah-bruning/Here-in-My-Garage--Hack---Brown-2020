@@ -15,12 +15,18 @@
         <div class="buttonBox">
           <form action="user-queue.html">
             <div class="formItem">
-              Name: <input type="text" name="First and Last name">
+              Name: <input type="text" name="First Name Only", id="name">
             </div>
             <div class="formItem">
-              Event Code: <input type="text" name="XXX">
+              Event Code: <input type="text" name="XXX", id="code">
             </div>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit", onclick="createUser()">
           </form>
         </div>
     </body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase.js"></script>
+    <script src="newQ.js"> </script>
+    <script src="garage.js"> </script>
+
+</html>

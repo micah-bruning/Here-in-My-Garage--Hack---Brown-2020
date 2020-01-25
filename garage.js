@@ -27,40 +27,61 @@ function createQueue(){
     var location = document.getElementById("location").value;
     var startTime = document.getElementById("starttime").value;
     var endTime = document.getElementById("endtime").value;
-    console.log(eventName);
+    // console.log(eventName);
     var id = "129483526749024759473";
     console.log("omegalul");
     newQueue(eventName,hostName, location,startTime,endTime,id);
-
 }
 
 
-function newQueue(eventName, hostName, location,start="asd",end="asd",id = "123"){
+
+function newQueue(eventName, hostName, location,start,end,id){
     var queue = {}
+>>>>>>> 0724aacfe2e431497ab405178a02de075a28ea7e
     var theRef = firebase.database().ref('queues');
     var newPostRef = theRef.push();
+    console.log(newPostRef.key);
     newPostRef.set({
         "eventName": eventName,
         "hostName": hostName,
         "location": location,
-        "id": id,
+        "id": newPostRef.key,
         "start": start,
         "end": end,
-        "people":"omega",
+        "people":0,
     });
+
+    // //idtokey
+    // var theRef = firebase.database().ref('idtokey');
+    // var newPostRef = theRef.push();
+    // console.log(newPostRef.key);
+    // newPostRef.set({
+    //     id:newPostRef.key,
+    // });
 }
 
-function addUser(name, id) {
-  
+function createUser(){
+  var name = document.getElementById("name").value;
+  var code = document.getElementById("code").value;
+  addUser(name, code);
 }
 
+function addUser(name, code) {
+  var theRef = firebase.database().ref('queues/people');
+  var newUserRef = theRef.push();
+  newPostRef.set({
+      "name": name,
+      "code": code,
+  });
+}
 
+function readQueue(){
+
+}
 function update(){
     var theRef = firebase.database().ref('queues');
     theRef.once('value', function(snapshot) {
     document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
     // console.log(snapshot);
     });
-
-
 }
