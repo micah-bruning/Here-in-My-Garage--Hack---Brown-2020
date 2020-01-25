@@ -50,12 +50,17 @@ function newQueue(eventName, hostName, location,start="asd",end="asd",id = "123"
     });
 }
 
-function update(){  
+function addUser(name, id) {
+  
+}
+
+
+function update(){
     var theRef = firebase.database().ref('queues');
     theRef.once('value', function(snapshot) {
     document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
     // console.log(snapshot);
     });
-    
-    
+
+
 }
