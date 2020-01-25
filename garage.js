@@ -31,12 +31,16 @@ function createQueue(){
     var id = "129483526749024759473";
     console.log("omegalul");
     newQueue(eventName,hostName, location,startTime,endTime,id);
-
 }
 
 
+<<<<<<< HEAD
 function newQueue(eventName, hostName, location,start="asd",end="asd"){
     //queues
+=======
+function newQueue(eventName, hostName, location,start,end,id){
+    var queue = {}
+>>>>>>> 0724aacfe2e431497ab405178a02de075a28ea7e
     var theRef = firebase.database().ref('queues');
     var newPostRef = theRef.push();
     console.log(newPostRef.key);
@@ -59,8 +63,19 @@ function newQueue(eventName, hostName, location,start="asd",end="asd"){
     // });
 }
 
-function addUser(name, id) {
-  
+function createUser(){
+  var name = document.getElementById("name").value;
+  var code = document.getElementById("code").value;
+  addUser(name, code);
+}
+
+function addUser(name, code) {
+  var theRef = firebase.database().ref('queues/people');
+  var newUserRef = theRef.push();
+  newPostRef.set({
+      "name": name;
+      "code": code;
+  });
 }
 
 function readQueue(){
