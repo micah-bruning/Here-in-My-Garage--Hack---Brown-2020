@@ -3,30 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>Qup Homepage</title>
+        <link rel="icon" href="./Q_favicon.png">
         <link rel="stylesheet" type="text/css" href="main.css">
+        <link href='https://fonts.googleapis.com/css?family=Bebas Neue: 100,400,700' rel='stylesheet'>
     </head>
+
     <body>
-        <h1>Qup</h1>
-
-        <img src="Qup.png" 
-        alt="Qup Logo" width="30%">
-
-        <p>This is our <em>project</em>.</p>
-        <br>
-        <br>
-
-        <div>
-            <button onclick="window.location.href = 'user-join.html';">Join</button>
-            <br>
-            <br>
-            <!-- Update links to three buttons below -->
-            <button onclick="window.location.href = 'user-queue.html';">See</button>
-            <br>
-            <br>
-            <button onclick="window.location.href = 'user-join.html';">Host</button>
-            <br>
-            <br>
-            <button onclick="window.location.href = 'user-join.html';">Returning Host</button>
+        <a href="index.html"> <img src="Qup.png" id="QupLogo"> </a>
+        <div class="buttonBox">
+            <button onclick="window.location.href = 'user-join.html';" class="bigButton">Join an Event</button>
+            <button onclick="window.location.href = 'user-queue.html';">See Your Spot</button>
+            <button onclick="window.location.href = 'newQ.html';">Host a New Event</button>
+            <button onclick="window.location.href = 'viewQ.html';">Returning Host</button>
         </div>
     </body>
 </html>

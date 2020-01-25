@@ -1,1 +1,54 @@
-<h1 align="center"> Your position in Queue Is... </h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>User Queue</title>
+        <link rel="icon" href="./Q_favicon.png">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link href='https://fonts.googleapis.com/css?family=Bebas Neue: 100,400,700' rel='stylesheet'>
+    </head>
+    <body>
+        <h1 align="center"> <font face="futura"> Your queue... </font> </h1>
+        <button onclick=addRowToTable()>addRow</button>
+            <script>
+                // Add items to <table>
+                function addRow() {
+                    // First check if a <tbody> tag exists, add one if not
+                    if ($("#queueTableTwo tbody").length == 0) {
+                      $("#queueTableTwo").append("<tbody></tbody>");
+                    }
+                  
+                // Append to  table
+                $("#queueTableTwo tbody").append(
+                  "<tr>" +
+                    "<td>itemOne</td>" +
+                    "<td>itemTwo</td>" +
+                    "<td>itemThree</td>" +
+                  "</tr>"
+                  );
+              }
+            </script>
+
+        <h2>List Tickets</h2>
+
+        <div class="queue">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Telephone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <th>Cam</th>
+                        <th>666-666-6666</th>
+                    </tr>
+                </tbody>
+        </div>
+      
+      <!-- <table style="width:100%" color: white; background-color: black; > -->
+    </body>
+</html>
