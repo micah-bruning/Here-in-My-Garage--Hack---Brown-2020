@@ -1,37 +1,14 @@
-var table = document.getElementById("queueTable")
+var table = document.getElementById("queue");
+var tbodyArray = document.getElementsByClassName("tbodyElement");
 
-
-  function addRowToTable() {
-    // First check if a <tbody> tag exists, add one if not
-    // if ($("#queueTableTwo tbody").length == 0) {
-    //   $("#queueTable").append("<tbody></tbody>");
-    // }
-
-    ("#queue tbody").append(
-      "<tr>" +
-        "<td>Item1</td>" +
-        "<td>Item2</td>" +
-        "<td>Item3</td>" +
-      "</tr>"
-      );
-      addPersonToTable();
-  }
-
-  function addPersonToTable() {
-    // First check if a <tbody> tag exists, add one if not
-    // if ($("#queue tbody").length == 0) {
-    //   $("#queue").append("<tbody></tbody>");
-    // }
-        
-    // Append product to the table
-    ("#queue tbody").append(
-        "<tr>" +
-          "<td>" + ("one") + "</td>" +
-          "<td>" + ("two") + "</td>" +
-          "<td>" + ("three") + "</td>" +
-         // "<td>" + $("#itemOne").val() + "</td>" +
-        //  "<td>" + $("#itemTwo").val() + "</td>" +
-        //  "<td>" + $("#itemThree").val() + "</td>" +
-        "</tr>"
-        );
-  }
+function addToTable() {
+  console.log(table.length);
+  var last = table.length;
+  var row = table.insertRow(last);
+  var cell1 = row.insertCell(last);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(1);
+  cell1.innerHTML = "NEW CELL1";
+  cell2.innerHTML = "NEW CELL2";
+  cell3.innerHTML = "NEW CELL3";
+}

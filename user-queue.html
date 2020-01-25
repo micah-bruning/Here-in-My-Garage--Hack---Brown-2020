@@ -21,34 +21,18 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>1</th>
-                <th>Cam</th>
-                <th>666-666-6666</th>
-              </tr>
+              <div class="tbodyElement">
+                <tr>
+                  <td>1</td>
+                  <td>Cam</td>
+                  <td>666-666-6666</td>
+                </tr>
+              </div>
             </tbody>
           </table>
         </div>
 
-        <button onclick=addRowToTable()>addRow</button>
-            <!-- <script>
-                // Add items to <table>
-                function addRow() {
-                    // First check if a <tbody> tag exists, add one if not
-                    if ($("#queueTableTwo tbody").length == 0) {
-                      $("#queueTableTwo").append("<tbody></tbody>");
-                    }
-
-                // Append to  table
-                $("#queueTableTwo tbody").append(
-                  "<tr>" +
-                    "<td>itemOne</td>" +
-                    "<td>itemTwo</td>" +
-                    "<td>itemThree</td>" +
-                  "</tr>"
-                  );
-              }
-            </script> -->
+        <button onclick="addToTable()">addRow</button>
 
     </body>
     <script src="user-queue.js"> </script>
