@@ -15,24 +15,14 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 var database = firebase.database();
 
-
-
-
 ///realcode
 
-///how to live update 
+///how to live update
 // change 'queues/id' for all data
 var queuesRef = firebase.database().ref('queues');
-theRef.on('value', function(snapshot) {
+queuesRef.on('value', function(snapshot) {
 document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
 });
-
-
-
-// var theRef = firebase.database().ref();
-// theRef.once('', function(snapshot) {
-//   update(snapshot);
-// });
 
 function createQueue(){
     var eventName = document.getElementById("eventname").value;
@@ -61,14 +51,6 @@ function newQueue(eventName, hostName, location,start,end,id){
         "end": end,
         "people":0,
     });
-
-    // //idtokey
-    // var theRef = firebase.database().ref('idtokey');
-    // var newPostRef = theRef.push();
-    // console.log(newPostRef.key);
-    // newPostRef.set({
-    //     id:newPostRef.key,
-    // });
 }
 
 ///TODO: IMPLEMENT NUM COUNT FOR QUEUE COUNT
@@ -85,12 +67,6 @@ function addUser(name, code) {
       "name": name,
       "code": code,
   });
-}
-
-
-
-function readQueue(){
-
 }
 
 function update(){
