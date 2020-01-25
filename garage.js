@@ -78,17 +78,24 @@ function createUser(){
 }
 
 function addUser(name, code) {
-  var theRef = firebase.database().ref('queues/people');
+  var theRef = firebase.database().ref('queues/' + code + '/people');
   var newUserRef = theRef.push();
+<<<<<<< HEAD
   newPostRef.set({
+=======
+  newUserRef.set({
+>>>>>>> 3743e6b4389b0d66f2fa95807f861476ab270f32
       "name": name,
       "code": code,
   });
 }
 
+
+
 function readQueue(){
-    
+
 }
+
 function update(){
     var theRef = firebase.database().ref('queues');
     theRef.once('value', function(snapshot) {
