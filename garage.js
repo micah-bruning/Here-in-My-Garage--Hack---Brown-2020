@@ -20,7 +20,7 @@ var database = firebase.database();
 
 ///realcode
 
-///how to live update 
+///how to live update
 // change 'queues/id' for all data
 var queuesRef = firebase.database().ref('queues');
 theRef.on('value', function(snapshot) {
