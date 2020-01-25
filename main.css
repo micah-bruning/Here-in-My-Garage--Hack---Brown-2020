@@ -94,3 +94,14 @@ input[type=text] {
   margin-bottom: 10px;
   vertical-align: middle;
 }
+
+thead {
+  font: 24px 'Bebas Neue';
+  letter-spacing: 0.1em;
+  color: #EA915A;
+}
+
+tbody {
+  font: 18px 'Open Sans';
+  letter-spacing: normal;
+}
