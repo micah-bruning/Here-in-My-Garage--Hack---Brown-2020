@@ -1,3 +1,4 @@
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyAYi1VET68DBLv9P06JmcNjP5GIi2x2FzI",
@@ -12,9 +13,21 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-
-
 var database = firebase.database();
+
+
+
+
+///realcode
+
+///how to live update 
+// change 'queues/id' for all data
+var queuesRef = firebase.database().ref('queues');
+theRef.on('value', function(snapshot) {
+document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
+});
+
+
 
 // var theRef = firebase.database().ref();
 // theRef.once('', function(snapshot) {
@@ -34,13 +47,8 @@ function createQueue(){
 }
 
 
-<<<<<<< HEAD
-function newQueue(eventName, hostName, location,start="asd",end="asd"){
-    //queues
-=======
 function newQueue(eventName, hostName, location,start,end,id){
     var queue = {}
->>>>>>> 0724aacfe2e431497ab405178a02de075a28ea7e
     var theRef = firebase.database().ref('queues');
     var newPostRef = theRef.push();
     console.log(newPostRef.key);
@@ -73,8 +81,8 @@ function addUser(name, code) {
   var theRef = firebase.database().ref('queues/people');
   var newUserRef = theRef.push();
   newPostRef.set({
-      "name": name;
-      "code": code;
+      "name": name,
+      "code": code,
   });
 }
 
