@@ -1,3 +1,4 @@
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyAYi1VET68DBLv9P06JmcNjP5GIi2x2FzI",
@@ -12,9 +13,21 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-
-
 var database = firebase.database();
+
+
+
+
+///realcode
+
+///how to live update 
+// change 'queues/id' for all data
+var queuesRef = firebase.database().ref('queues');
+theRef.on('value', function(snapshot) {
+document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
+});
+
+
 
 // var theRef = firebase.database().ref();
 // theRef.once('', function(snapshot) {
@@ -34,10 +47,8 @@ function createQueue(){
 }
 
 
-
 function newQueue(eventName, hostName, location,start,end,id){
     var queue = {}
->>>>>>> 0724aacfe2e431497ab405178a02de075a28ea7e
     var theRef = firebase.database().ref('queues');
     var newPostRef = theRef.push();
     console.log(newPostRef.key);
@@ -67,17 +78,24 @@ function createUser(){
 }
 
 function addUser(name, code) {
-  var theRef = firebase.database().ref('queues/people');
+  var theRef = firebase.database().ref('queues/' + code + '/people');
   var newUserRef = theRef.push();
+<<<<<<< HEAD
   newPostRef.set({
+=======
+  newUserRef.set({
+>>>>>>> 3743e6b4389b0d66f2fa95807f861476ab270f32
       "name": name,
       "code": code,
   });
 }
 
+
+
 function readQueue(){
 
 }
+
 function update(){
     var theRef = firebase.database().ref('queues');
     theRef.once('value', function(snapshot) {
