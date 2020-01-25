@@ -4,22 +4,32 @@
         <meta charset="utf-8">
         <title>Queue Page</title>
         <link rel="stylesheet" type="text/css" href="main.css">
+        <link href='https://fonts.googleapis.com/css?family=Bebas Neue: 100,400,700' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Open Sans: 100,400,700' rel='stylesheet'>
     </head>
     <body>
-        <h1>Create Your Queue!</h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+      <a href="index.html"> <img src="Qup.png" id="QupLogo"> </a>
+      <h1>Create Your Queue!</h1>
+      <div class="buttonBox">
         <form action="viewQ.html">
-            Event Name: <input type="text" id="eventname"><br>
-            Host Name: <input type="text" id="hostname"><br>
-            Location: <input type="text" id="location"><br>
-            Start Time: <input type="time" id="starttime"><br>
-            End Time: <input type="time" id="endtime"><br>
-            <input type="button" value="Submit" onclick="createQueue()">
+          <div class="formItem">
+            Event Name: <input type="text" id="eventname">
+          </div>
+          <div class="formItem">
+            Host name: <input type="text" id="hostname">
+          </div>
+          <div class="formItem">
+            Location: <input type="text" id="location">
+          </div>
+          <div class="formItem">
+            Start Time: <input type="time" id="starttime">
+          </div>
+          <div class="formItem">
+            End Time: <input type="time" id="endtime">
+          </div>
+            <input type="submit" value="Submit" onclick="createQueue()">
           </form>
+      </div>
     </body>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase.js"></script>
     <script src="newQ.js"> </script>
