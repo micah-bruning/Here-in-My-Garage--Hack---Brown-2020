@@ -39,6 +39,7 @@ button {
   width: 200px;
   padding: 10px;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .buttonBox {
@@ -73,7 +74,6 @@ input[type=submit] {
 input[type=text] {
   font: 18px 'Open Sans';
   letter-spacing: normal;
-  color: black;
   margin-left: 10px;
 }
 
