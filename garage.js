@@ -22,10 +22,13 @@ var database = firebase.database();
 // });
 
 function post(){
+    var queue = {}
     var theRef = firebase.database().ref('queues');
-    var updates = {};
-    updates['/queues'] = 'Party';
-    return firebase.database().ref().update(updates);
+    var newPostRef = theRef.push();
+    newPostRef.set({
+        "name": "party",
+        "id": "ha",
+    });
 }
 
 function update(){  
