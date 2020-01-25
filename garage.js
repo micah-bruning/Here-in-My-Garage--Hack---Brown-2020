@@ -21,17 +21,37 @@ var database = firebase.database();
 //   update(snapshot);
 // });
 
-function post(){
+function createQueue(){
+    var eventName = document.getElementByName("eventname").value;
+    var hostName = document.getElementByName("hostname").value;
+    var location = document.getElementByName("location").value;
+    var startTime = document.getElementByName("starttime").value;
+    var endTime = document.getElementByName("endtime").value;
+    var id = "129483526749024759473";
+    newQueue(eventName,hostName, location,startTime,endTime,id);
+
+}
+
+
+function newQueue(eventName, hostName, location,start,end,id){
+    var queue = {}
     var theRef = firebase.database().ref('queues');
-    var updates = {};
-    updates['/queues'] = 'Party';
-    return firebase.database().ref().update(updates);
+    var newPostRef = theRef.push();
+    newPostRef.set({
+        "eventName": eventName,
+        "hostName": hostName,
+        "location": location,
+        "id": id,
+        "start": start,
+        "end": end,
+        "people":{},
+    });
 }
 
 function update(){  
     var theRef = firebase.database().ref('queues');
     theRef.once('value', function(snapshot) {
-    document.getElementById("lmao").innerHTML = snapshot.val();
+    document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
     // console.log(snapshot);
     });
     

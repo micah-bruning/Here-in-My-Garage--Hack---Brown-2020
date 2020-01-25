@@ -1,6 +1,7 @@
 
 
 <h1 align="center"> <font face="futura"> Your queue... </font> </h1>
+<button onclick=addRowToTable()>addRow</button>
 
 <html lang="en">
     <head>
@@ -17,16 +18,77 @@
         </style>
     </head>
 
-    <table style="width:100%">
+    <script>
+        // Add items to <table>
+        function addRow() {
+          // First check if a <tbody> tag exists, add one if not
+          if ($("#queueTableTwo tbody").length == 0) {
+            $("#queueTableTwo").append("<tbody></tbody>");
+          }
+            
+          // Append to  table
+          $("#queueTableTwo tbody").append(
+            "<tr>" +
+              "<td>itemOne</td>" +
+              "<td>itemTwo</td>" +
+              "<td>itemThree</td>" +
+            "</tr>"
+            );
+        }
+      </script>
+
+<table style="width:100%" color: white; background-color: black; >
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>List Tickets</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <table id="queueTableTwo" style="width:100%"
+                    class="table table-bordered
+                           table-condensed table-striped">
+              <thead>
+                <tr>
+                    <th colspan="2">The table header</th>
+                </tr>
+
+                <tr>
+                  <th>Position</th>
+                  <th>Name</th>
+                  <th>Appointment Time</th>
+                </tr>
+                <tr style="width:100%">
+                    <td>Bill Gates</td>
+                    <td>55577854</td>
+                    <td>55577855</td>
+                  </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </table>
+
+
+    <!-- <table style="width:100%" color: white; background-color: black; >
+        <id>"queueTable"</id>
+        <thead>
+            <tr>
+                <th colspan="2">The table header</th>
+            </tr>
+        </thead>
+
         <tr>
           <th>Name</th>
-          <th colspan="2">Telephone</th>
+          <th colspan="2">Telephone </th>
         </tr>
         <tr>
           <td>Bill Gates</td>
           <td>55577854</td>
           <td>55577855</td>
         </tr>
-      </table>
-      
+      </table> -->
+
 </html>
