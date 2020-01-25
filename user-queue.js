@@ -3,11 +3,11 @@ var table = document.getElementById("queueTable")
 
   function addRowToTable() {
     // First check if a <tbody> tag exists, add one if not
-    if ($("#queueTableTwo tbody").length == 0) {
-      $("#queueTable").append("<tbody></tbody>");
-    }
+    // if ($("#queueTableTwo tbody").length == 0) {
+    //   $("#queueTable").append("<tbody></tbody>");
+    // }
 
-    $("#queueTableTwo tbody").append(
+    ("#queue tbody").append(
       "<tr>" +
         "<td>Item1</td>" +
         "<td>Item2</td>" +
@@ -19,12 +19,12 @@ var table = document.getElementById("queueTable")
 
   function addPersonToTable() {
     // First check if a <tbody> tag exists, add one if not
-    if ($("#queueTableTwo tbody").length == 0) {
-      $("#queueTableTwo").append("<tbody></tbody>");
-    }
+    // if ($("#queue tbody").length == 0) {
+    //   $("#queue").append("<tbody></tbody>");
+    // }
         
     // Append product to the table
-    $("#queueTableTwo tbody").append(
+    ("#queue tbody").append(
         "<tr>" +
           "<td>" + ("one") + "</td>" +
           "<td>" + ("two") + "</td>" +
@@ -35,6 +35,3 @@ var table = document.getElementById("queueTable")
         "</tr>"
         );
   }
-
-  addElemToTable();
-  addPersonToTable();
