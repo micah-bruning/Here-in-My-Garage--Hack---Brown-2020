@@ -4,22 +4,32 @@
         <meta charset="utf-8">
         <title>Queue Page</title>
         <link rel="stylesheet" type="text/css" href="main.css">
+        <link href='https://fonts.googleapis.com/css?family=Bebas Neue: 100,400,700' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Open Sans: 100,400,700' rel='stylesheet'>
     </head>
     <body>
-        <h1>Create Your Queue!</h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+      <a href="index.html"> <img src="Qup.png" id="QupLogo"> </a>
+      <h1>Create Your Queue!</h1>
+      <div class="buttonBox">
         <form action="viewQ.html">
-            Event Name: <input type="text" name="eventname"><br>
-            Host name: <input type="text" name="hostname"><br>
-            Location: <input type="text" name="location"><br>
-            Start Time: <input type="time" name="starttime"><br>
-            End Time: <input type="time" name="endtime"><br>
+          <div class="formItem">
+            Event Name: <input type="text" name="eventname">
+          </div>
+          <div class="formItem">
+            Host name: <input type="text" name="hostname">
+          </div>
+          <div class="formItem">
+            Location: <input type="text" name="location">
+          </div>
+          <div class="formItem">
+            Start Time: <input type="time" name="starttime">
+          </div>
+          <div class="formItem">
+            End Time: <input type="time" name="endtime">
+          </div>
             <input type="submit" value="Submit" onclick="createQueue()">
           </form>
+      </div>
     </body>
     <script src="newQ.js"> </script>
 </html>
