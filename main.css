@@ -74,7 +74,7 @@ input {
   color: #A0A0A0;
 }
 
-input[type=submit] {
+input[type=button] {
   background-color: #7AA6D8;
   width: 100%;
   padding: 5px;

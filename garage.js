@@ -54,18 +54,18 @@ function newQueue(eventName, hostName, location,start,end,id){
 }
 
 function createUser(){
-  var name = document.getElementById("name").value;
-  var code = document.getElementById("code").value;
-  addUser(name, code);
+    var name = document.getElementById("name").value;
+    var code = document.getElementById("code").value;
+    addUser(name, code);
 }
 
 function addUser(name, code) {
-  var theRef = firebase.database().ref('queues/' + code + '/people');
-  var newUserRef = theRef.push();
-  newUserRef.set({
-      "name": name,
-      "code": code,
-  });
+    var theRef = firebase.database().ref('queues/' + code + '/people');
+    var newUserRef = theRef.push();
+    newUserRef.set({
+        "name": name,
+        "code": code,
+    });
 }
 
 function update(){
@@ -74,4 +74,11 @@ function update(){
     document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
     // console.log(snapshot);
     });
+}
+
+function getQfromID() {
+    var code = document.getElementById("code");
+    console.log("hello");
+    var theRef = firebase.database().ref('queues/' + code);
+    console.log(theRef);
 }
