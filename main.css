@@ -15,6 +15,17 @@ h1 {
   color: white;
   padding: 20px;
   margin-top: 0px;
+  font-size: 48px;
+}
+
+h2 {
+  background-color: #EA915A;
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.2em;
+  color: white;
+  padding: 20px;
+  margin-top: 0px;
+  font-size: 48px;
 }
 
 button {
@@ -39,6 +50,7 @@ button {
   width: 200px;
   padding: 10px;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .buttonBox {
@@ -81,4 +93,15 @@ input[type=text] {
   justify-content: space-between;
   margin-bottom: 10px;
   vertical-align: middle;
+}
+
+thead {
+  font: 24px 'Bebas Neue';
+  letter-spacing: 0.1em;
+  color: #EA915A;
+}
+
+tbody {
+  font: 18px 'Open Sans';
+  letter-spacing: normal;
 }
