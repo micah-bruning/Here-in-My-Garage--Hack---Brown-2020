@@ -22,18 +22,20 @@ var database = firebase.database();
 // });
 
 function createQueue(){
-    var eventName = document.getElementByName("eventname").value;
-    var hostName = document.getElementByName("hostname").value;
-    var location = document.getElementByName("location").value;
-    var startTime = document.getElementByName("starttime").value;
-    var endTime = document.getElementByName("endtime").value;
+    var eventName = document.getElementById("eventname").value;
+    var hostName = document.getElementById("hostname").value;
+    var location = document.getElementById("location").value;
+    var startTime = document.getElementById("starttime").value;
+    var endTime = document.getElementById("endtime").value;
+    console.log(eventName);
     var id = "129483526749024759473";
+    console.log("omegalul");
     newQueue(eventName,hostName, location,startTime,endTime,id);
 
 }
 
 
-function newQueue(eventName, hostName, location,start,end,id){
+function newQueue(eventName, hostName, location,start="asd",end="asd",id = "123"){
     var queue = {}
     var theRef = firebase.database().ref('queues');
     var newPostRef = theRef.push();
@@ -44,7 +46,7 @@ function newQueue(eventName, hostName, location,start,end,id){
         "id": id,
         "start": start,
         "end": end,
-        "people":{},
+        "people":"omega",
     });
 }
 

@@ -13,13 +13,15 @@
         <br>
         <br>
         <form action="viewQ.html">
-            Event Name: <input type="text" name="eventname"><br>
-            Host name: <input type="text" name="hostname"><br>
-            Location: <input type="text" name="location"><br>
-            Start Time: <input type="time" name="starttime"><br>
-            End Time: <input type="time" name="endtime"><br>
-            <input type="submit" value="Submit" onclick="createQueue()">
+            Event Name: <input type="text" id="eventname"><br>
+            Host Name: <input type="text" id="hostname"><br>
+            Location: <input type="text" id="location"><br>
+            Start Time: <input type="time" id="starttime"><br>
+            End Time: <input type="time" id="endtime"><br>
+            <input type="button" value="Submit" onclick="createQueue()">
           </form>
     </body>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase.js"></script>
     <script src="newQ.js"> </script>
+    <script src="garage.js"> </script>
 </html>
