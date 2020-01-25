@@ -34,10 +34,7 @@ function createQueue(){
 }
 
 
-<<<<<<< HEAD
-function newQueue(eventName, hostName, location,start="asd",end="asd"){
-    //queues
-=======
+
 function newQueue(eventName, hostName, location,start,end,id){
     var queue = {}
 >>>>>>> 0724aacfe2e431497ab405178a02de075a28ea7e
@@ -73,13 +70,13 @@ function addUser(name, code) {
   var theRef = firebase.database().ref('queues/people');
   var newUserRef = theRef.push();
   newPostRef.set({
-      "name": name;
-      "code": code;
+      "name": name,
+      "code": code,
   });
 }
 
 function readQueue(){
-    
+
 }
 function update(){
     var theRef = firebase.database().ref('queues');
