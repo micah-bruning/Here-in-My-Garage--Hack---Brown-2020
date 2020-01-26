@@ -21,8 +21,9 @@ var database = firebase.database();
 // change 'queues/id' for all data
 var queuesRef = firebase.database().ref('queues');
 queuesRef.on('value', function(snapshot) {
+    if(document.getElementById("lmao") != null){
 document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
-});
+}});
 
 function createQueue(){
     var eventName = document.getElementById("eventname").value;
@@ -57,18 +58,18 @@ function newQueue(eventName, hostName, location,start,end){
 
 ///TODO: IMPLEMENT NUM COUNT FOR QUEUE COUNT
 function createUser(){
-  var name = document.getElementById("name").value;
-  var code = document.getElementById("code").value;
-  addUser(name, code);
+    var name = document.getElementById("name").value;
+    var code = document.getElementById("code").value;
+    addUser(name, code);
 }
 
 function addUser(name, code) {
-  var theRef = firebase.database().ref('queues/' + code + '/people');
-  var newUserRef = theRef.push();
-  newUserRef.set({
-      "name": name,
-      "code": code,
-  });
+    var theRef = firebase.database().ref('queues/' + code + '/people');
+    var newUserRef = theRef.push();
+    newUserRef.set({
+        "name": name,
+        "code": code,
+    });
 }
 
 function update(){
@@ -77,4 +78,11 @@ function update(){
     document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
     // console.log(snapshot);
     });
+}
+
+function getQfromID() {
+    var code = document.getElementById("code").value;
+    console.log(code);
+    var theRef = firebase.database().ref('queues/' + code + '/people');
+    console.log(theRef);
 }
