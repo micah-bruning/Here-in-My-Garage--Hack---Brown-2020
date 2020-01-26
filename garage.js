@@ -38,6 +38,11 @@ function createQueue(){
 
 }
 
+function redirect(){
+    var id = document.getElementById("code").value;
+    setTimeout(function(){document.location.href = "./user-queue.html?id=" + id},0);
+}
+
 
 function newQueue(eventName, hostName, location,start,end){
     var queue = {}
@@ -61,6 +66,7 @@ function createUser(){
     var name = document.getElementById("name").value;
     var code = document.getElementById("code").value;
     addUser(name, code);
+    redirect();
 }
 
 function addUser(name, code) {
