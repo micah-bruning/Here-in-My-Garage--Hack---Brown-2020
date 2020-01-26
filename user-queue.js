@@ -58,3 +58,8 @@ function addToTable(num, name, phone) {
   cell2.innerHTML = name;
   cell3.innerHTML = phone;
 }
+
+function getCode(){
+  var code = document.getElementById("code").value;
+  return code;
+}

@@ -78,6 +78,7 @@ function addUser(name, code) {
     });
 }
 
+
 function update(){
     var theRef = firebase.database().ref('queues');
     theRef.once('value', function(snapshot) {
