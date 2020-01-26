@@ -32,13 +32,14 @@ function createQueue(){
     var startTime = document.getElementById("starttime").value;
     var endTime = document.getElementById("endtime").value;
     // console.log(eventName);
-    var id = "129483526749024759473";
-    console.log("omegalul");
-    newQueue(eventName,hostName, location,startTime,endTime,id);
+    var id = newQueue(eventName,hostName, location,startTime,endTime);
+    setTimeout(function(){document.location.href = "./user-queue.html?id=" + id},0);
+
+
 }
 
 
-function newQueue(eventName, hostName, location,start,end,id){
+function newQueue(eventName, hostName, location,start,end){
     var queue = {}
     var theRef = firebase.database().ref('queues');
     var newPostRef = theRef.push();
@@ -52,8 +53,10 @@ function newQueue(eventName, hostName, location,start,end,id){
         "end": end,
         "people":0,
     });
+    return newPostRef.key
 }
 
+///TODO: IMPLEMENT NUM COUNT FOR QUEUE COUNT
 function createUser(){
     var name = document.getElementById("name").value;
     var code = document.getElementById("code").value;
