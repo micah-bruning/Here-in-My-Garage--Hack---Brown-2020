@@ -21,8 +21,9 @@ var database = firebase.database();
 // change 'queues/id' for all data
 var queuesRef = firebase.database().ref('queues');
 queuesRef.on('value', function(snapshot) {
+    if(document.getElementById("lmao") != null){
 document.getElementById("lmao").innerHTML = JSON.stringify(snapshot.val());
-});
+}});
 
 function createQueue(){
     var eventName = document.getElementById("eventname").value;
@@ -31,13 +32,19 @@ function createQueue(){
     var startTime = document.getElementById("starttime").value;
     var endTime = document.getElementById("endtime").value;
     // console.log(eventName);
-    var id = "129483526749024759473";
-    console.log("omegalul");
-    newQueue(eventName,hostName, location,startTime,endTime,id);
+    var id = newQueue(eventName,hostName, location,startTime,endTime);
+    setTimeout(function(){document.location.href = "./user-queue.html?id=" + id},0);
+
+
+}
+
+function redirect(){
+    var id = document.getElementById("code").value;
+    setTimeout(function(){document.location.href = "./user-queue.html?id=" + id},0);
 }
 
 
-function newQueue(eventName, hostName, location,start,end,id){
+function newQueue(eventName, hostName, location,start,end){
     var queue = {}
     var theRef = firebase.database().ref('queues');
     var newPostRef = theRef.push();
@@ -51,12 +58,15 @@ function newQueue(eventName, hostName, location,start,end,id){
         "end": end,
         "people":0,
     });
+    return newPostRef.key
 }
 
+///TODO: IMPLEMENT NUM COUNT FOR QUEUE COUNT
 function createUser(){
     var name = document.getElementById("name").value;
     var code = document.getElementById("code").value;
     addUser(name, code);
+    redirect();
 }
 
 function addUser(name, code) {
@@ -78,8 +88,8 @@ function update(){
 }
 
 function getQfromID() {
-    var code = document.getElementById("code");
-    console.log("hello");
-    var theRef = firebase.database().ref('queues/' + code);
-    console.log(theRef);
+    var code = document.getElementById("code").value;
+    //console.log(code);
+    var theRef = firebase.database().ref('queues/' + code + '/people');
+    //console.log(theRef);
 }
