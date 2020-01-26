@@ -19,14 +19,19 @@ var tbodyArray = document.getElementsByClassName("tbodyElement");
 
 ///how to live update
 // change 'queues/id' for all data
+// var infoObj = {};
 var url_string = window.location.href;
 var url = new URL(url_string);
 var id = url.searchParams.get("id");
 console.log(id);
 var infoRef = firebase.database().ref('queues/'+id);
 infoRef.on('value', function(snapshot) {
-document.getElementById("info").innerHTML = JSON.stringify(snapshot.val());
+var infoObj = snapshot.val();
+console.log(infoObj);
+document.getElementById("info").innerHTML = infoObj.people;
+
 });
+// console.log(infoObj);
 
 
 
