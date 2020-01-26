@@ -27,23 +27,28 @@ console.log(id);
 var infoRef = firebase.database().ref('queues/'+id);
 infoRef.on('value', function(snapshot) {
 var infoObj = snapshot.val();
-console.log(infoObj);
-document.getElementById("info").innerHTML = infoObj.people;
-
+//console.log(infoObj);
+//document.getElementById("info").innerHTML = infoObj.people;
+var count = 1;
+for(let key in infoObj.people){
+  console.log(key);
+  addToTable(count, "666-666-6666", infoObj.people[key].name);
+  count = count + 1;
+}
 });
 // console.log(infoObj);
 
 
 
 
-function addToTable() {
-  console.log(table.length);
+function addToTable(num, name, phone) {
+ // console.log(table.length);
   var last = table.length;
   var row = table.insertRow(last);
   var cell1 = row.insertCell(last);
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(1);
-  cell1.innerHTML = "NEW CELL1";
-  cell2.innerHTML = "NEW CELL2";
-  cell3.innerHTML = "NEW CELL3";
+  cell1.innerHTML = num;
+  cell2.innerHTML = name;
+  cell3.innerHTML = phone;
 }
