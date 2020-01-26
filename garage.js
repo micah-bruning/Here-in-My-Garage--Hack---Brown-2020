@@ -79,7 +79,7 @@ function update(){
 
 function getQfromID() {
     var code = document.getElementById("code").value;
-    console.log(code);
+    //console.log(code);
     var theRef = firebase.database().ref('queues/' + code + '/people');
-    console.log(theRef);
+    //console.log(theRef);
 }
