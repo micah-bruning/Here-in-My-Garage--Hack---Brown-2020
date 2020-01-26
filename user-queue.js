@@ -12,3 +12,8 @@ function addToTable() {
   cell2.innerHTML = "NEW CELL2";
   cell3.innerHTML = "NEW CELL3";
 }
+
+function getCode(){
+  var code = document.getElementById("code").value;
+  return code;
+}
