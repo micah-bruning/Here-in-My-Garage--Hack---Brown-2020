@@ -28,7 +28,13 @@ var infoRef = firebase.database().ref('queues/'+id);
 infoRef.on('value', function(snapshot) {
 var infoObj = snapshot.val();
 //console.log(infoObj);
-//document.getElementById("info").innerHTML = infoObj.people;
+// eventname").value;
+//     var hostName = document.getElementById("hostname").value;
+//     var location = document.getElementById("location").value;
+//     var startTime = document.getElementById("starttime").value;
+//     var endTime = document.getElementById("endtime"
+document.getElementById("info").innerHTML = "Event Name: " + infoObj.eventName + "         Host Name: " + infoObj.hostName + "        Location: " + infoObj.location;
+// document.getElementById("time").innerHTML = "    Start: " + infoObj.startTime + "    End: " + str(infoObj.endTime);
 var count = 1;
 for(let key in infoObj.people){
   console.log(key);
